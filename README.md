@@ -1,7 +1,8 @@
 # BACON: Bayesian Optimal Condensation Framework for Dataset Distillation
-Official PyTorch implementation of **"[BACON: Bayesian Optimal Condensation Framework for Dataset Distillation](https://arxiv.org/)"**, submitted to **NeurIPS'25**
+Official PyTorch implementation of **"[BACON: Bayesian Optimal Condensation Framework for Dataset Distillation](https://arxiv.org/)"**.
+<!-- , submitted to **NeurIPS'25** -->
 
-![image samples](./Fig/Vis.png)
+![image samples](./Fig/Fig6.png)
 
 > **Abstract** *Dataset Distillation (DD) aims to distill knowledge from extensive datasets into more compact ones while preserving performance on the test set, thereby reducing storage costs and training expenses. However, existing methods often lack a robust theoretical framework for evaluating distillation performance. To address this gap, we propose the  <u>**BA**</u>yesian optimal <u>**CON**</u>densation framework (<u>**BACON**</u>), which, to the best of our knowledge, is the first work to introduce the Bayesian theoretical framework to the literature of DD, providing theoretical support for evaluating its distillation performance. Furthermore, BACON formulates the DD problem as the minimization of the expected risk function in joint probability distributions using the Bayesian framework. Additionally, by analyzing the expected risk function for optimal condensation, we derive a numerically feasible lower bound based on specific assumptions, providing an approximate solution for BACON. We validate BACON across several datasets, demonstrating its superior performance compared to existing state-of-the-art methods. For instance, on the CIFAR-10 dataset, BACON achieves 20\% accuracy gains accuracy gains, and on the SVHN dataset, BACON achieves a remarkable performance gain of up to 38\%. Our extensive experiments confirm the effectiveness of BACON and its seamless integration with existing methods, thereby enhancing their performance for the DD task. We will release our code upon acceptance at [BACON](https://github.com/zhouzhengqd/BACON).* 
 
