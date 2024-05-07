@@ -7,6 +7,7 @@ dependencies:
   - _libgcc_mutex=0.1=main
   - _openmp_mutex=4.5=1_gnu
   - blas=1.0=mkl
+  - blessings=1.7=py39hf3d152e_1008
   - brotlipy=0.7.0=py39h27cfd23_1003
   - bzip2=1.0.8=h7b6447c_0
   - ca-certificates=2021.10.8=ha878542_0
@@ -61,6 +62,7 @@ dependencies:
   - nettle=3.7.3=hbbd107a_1
   - numpy=1.21.2=py39h20f2e39_0
   - numpy-base=1.21.2=py39h79a1101_0
+  - nvidia-ml=7.352.0=py_0
   - openh264=2.1.1=h4ff587b_0
   - openssl=1.1.1m=h7f8727e_0
   - packaging=21.3=pyhd8ed1ab_0
@@ -105,3 +107,22 @@ dependencies:
   - yaspin=2.1.0=pyhd8ed1ab_0
   - zlib=1.2.11=h7f8727e_4
   - zstd=1.4.9=haebb681_0
+  - pip:
+      - contourpy==1.2.1
+      - cycler==0.12.1
+      - fonttools==4.51.0
+      - importlib-resources==6.4.0
+      - joblib==1.4.0
+      - jsonpatch==1.33
+      - jsonpointer==2.4
+      - kiwisolver==1.4.5
+      - matplotlib==3.8.4
+      - networkx==3.2.1
+      - scikit-learn==1.4.2
+      - sklearn==0.0
+      - threadpoolctl==3.4.0
+      - torchnet==0.0.4
+      - tornado==6.4
+      - visdom==0.2.4
+      - websocket-client==1.7.0
+      - zipp==3.18.1
