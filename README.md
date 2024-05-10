@@ -4,7 +4,7 @@ Official PyTorch implementation of **"[BACON: Bayesian Optimal Condensation Fram
 
 ![image samples](./Fig/Fig6.png)
 
-> **Abstract** *Dataset Distillation (DD) aims to distill knowledge from extensive datasets into more compact ones while preserving performance on the test set, thereby reducing storage costs and training expenses. However, existing methods often suffer from computational intensity, particularly exhibiting suboptimal performance with large dataset sizes due to the lack of a robust theoretical framework for enhancing distillation effectiveness in DD tasks. To address these challenges, we propose the <u>**BA**</u>yesian optimal <u>**CON**</u>densation framework (<u>**BACON**</u>), which, to the best of our knowledge, is the first work to introduce the Bayesian theoretical framework to the literature of DD, providing theoretical support for improving its distillation performance. Furthermore, BACON formulates the DD problem as the minimization of the expected risk function in joint probability distributions using the Bayesian framework. Additionally, by analyzing the expected risk function for optimal condensation, we derive a numerically feasible lower bound based on specific assumptions, providing an approximate solution for BACON. We validate BACON across several datasets, demonstrating its superior performance compared to existing state-of-the-art methods. For instance, on the CIFAR-100 dataset, BACON achieves a 20\% accuracy gain, and on the SVHN dataset, BACON achieves a remarkable performance gain of up to 38\%. Our extensive experiments confirm the effectiveness of BACON and its seamless integration with existing methods, thereby enhancing their performance for the DD task. Code and distilled datasets are available at [BACON](https://github.com/zhouzhengqd/BACON).* 
+> **Abstract** *Dataset Distillation (DD) aims to distill knowledge from extensive datasets into more compact ones while preserving performance on the test set, thereby reducing storage costs and training expenses. However, existing methods often suffer from computational intensity, particularly exhibiting suboptimal performance with large dataset sizes due to the lack of a robust theoretical framework for enhancing distillation effectiveness in DD tasks. To address these challenges, we propose the <u>**BA**</u>yesian optimal <u>**CON**</u>densation framework (<u>**BACON**</u>), which, to the best of our knowledge, is the first work to introduce the Bayesian theoretical framework to the literature of DD, providing theoretical support for improving its distillation performance. Furthermore, BACON formulates the DD problem as the minimization of the expected risk function in joint probability distributions using the Bayesian framework. Additionally, by analyzing the expected risk function for optimal condensation, we derive a numerically feasible lower bound based on specific assumptions, providing an approximate solution for BACON. We validate BACON across several datasets, demonstrating its superior performance compared to existing state-of-the-art methods. For instance, on the CIFAR-100 dataset, BACON achieves a 20\% accuracy gain, and on the SVHN dataset, BACON achieves a remarkable performance gain of up to 38\%. Our extensive experiments confirm the effectiveness of BACON and its seamless integration with existing methods, thereby enhancing their performance for the DD task. Code and distilled datasets are available at [BACON]().* 
 
 ## Experimental Results
 The distilled datasets are available on the [Data Drive](https://drive.google.com/drive/folders/1hZCowM21nfSOkRtm8VuK1lEpP7Bd1jCq?usp=sharing).
@@ -42,7 +42,8 @@ The distilled datasets are available on the [Data Drive](https://drive.google.co
   git clone https://github.com/zhouzhengqd/BACON.git
   ```
 ### Step 2
-- Download Datasets (MNIST, Fashion-MNIST, SVHN, CIFAR-10, CIFAR-100, Tiny-ImageNet)
+- Download Datasets (MNIST, Fashion-MNIST, SVHN, CIFAR-10, CIFAR-100, Tiny-ImageNet). 
+<!-- - at [Dataset](https://drive.google.com/drive/folders/1hZCowM21nfSOkRtm8VuK1lEpP7Bd1jCq?usp=sharing). -->
 ### Step 3
 - Run the following command to create a conda environment
     ```
@@ -51,6 +52,19 @@ The distilled datasets are available on the [Data Drive](https://drive.google.co
     conda env create -f environment.yml
     conda activate bacon
     ```
+## Directory Structure
+- BACON
+    - Code
+        - data
+          - datasets
+        - checkpoints
+        - result
+        - Files for BACON
+        - enviroment.yml
+        - ...
+        - ...
+        - ...
+
 ## Command for Reproducing Experiment Results and Evaluation
 - For example: Validate on the MNIST, other datasets follow the "Command.txt" file.
 - BACON MNIST IPC-50
