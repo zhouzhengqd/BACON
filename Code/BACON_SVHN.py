@@ -33,8 +33,8 @@ def main():
     parser.add_argument('--batch_train', type=int, default=256, help='batch size for training networks')
     parser.add_argument('--init', type=str, default='real', help='noise/real: initialize synthetic images from random noise or randomly sampled real images.')
     parser.add_argument('--dsa_strategy', type=str, default='color_crop_cutout_flip_scale_rotate', help='differentiable Siamese augmentation strategy')
-    parser.add_argument('--data_path', type=str, default='/home/data/', help='dataset path')
-    parser.add_argument('--save_path', type=str, default='/home/IDM/result/', help='path to save results')
+    parser.add_argument('--data_path', type=str, default='./data/', help='dataset path')
+    parser.add_argument('--save_path', type=str, default='./result/', help='path to save results')
     parser.add_argument('--dis_metric', type=str, default='ours', help='distance metric')
     parser.add_argument('--outer_loop', type=int, default=1, help='outer loop for network update')
     parser.add_argument('--inner_loop', type=int, default=1, help='outer loop for network update')
@@ -199,21 +199,13 @@ def main():
                         accs_all_exps[model_eval] += accs
 
                     # save the checkpoint of synthetic set with best performance
-                    best_synset_filename = '/home/IDM/checkpoints/{}_ipc_{}_aug_{}_model_{}_acc_{}.pkl'.format(args.dataset, args.ipc, args.aug, model_eval, np.mean(accs))
+                    best_synset_filename = './checkpoints/{}_ipc_{}_aug_{}_model_{}_acc_{}.pkl'.format(args.dataset, args.ipc, args.aug, model_eval, np.mean(accs))
                     if best_acc < np.mean(accs):
                         best_acc = np.mean(accs)
                         with open(best_synset_filename, 'wb') as pkl_file:
                             pickle.dump((image_syn.detach(), label_syn.detach()), pkl_file)
                             print("Saving best synset with accuracy: {}".format(np.mean(accs)))
                 ''' visualize and save '''
-                # 对中间层输出应用t-SNE进行降维
-                embed = net_eval.module.embed if torch.cuda.device_count() > 1 else net_eval.embed # for GPU parallel
-                intermediate_outputs = embed(image_syn_eval)
-                # nan_mask = torch.isnan(intermediate_outputs).any(dim=1)
-                # intermediate_outputs_no_nan = intermediate_outputs[~nan_mask]
-                labels = label_syn_eval
-                save_path = '/home/IDM/sne/SVHN_IPC50_tsne_visualization_iter%d.png'%(it)
-                visualize_tsne(intermediate_outputs,labels, num_classes,save_path)
                 save_name = os.path.join(args.save_path, 'vis_%s_%s_%s_%dipc_exp%d_iter%d.png'%(args.method, args.dataset, args.model, args.ipc, exp, it))
                 image_syn_vis = copy.deepcopy(image_syn.detach().cpu())
                 for ch in range(channel):
@@ -304,16 +296,12 @@ def main():
                                 mean_output_syn = output_syn.mean(dim=0)
                                 prob_real =F.softmax(mean_output_real,dim=-1)
                                 prob_syn  =F.softmax(mean_output_syn,dim=-1)
-                                log_real = torch.log(prob_real)
-                                log_syn = torch.log(prob_syn)
                                 tv = total_variation(output_syn,output_real)
                                 clip_r = clip_function(prob_syn,prob_real)
                                 prob_s_given_x = negative_log_likelihood(output_syn,output_real)
                                 loss_c += prob_s_given_x
                                 loss_c += 0.8*tv
                                 loss_c += 0.2*clip_r
-                                # loss_c += torch.sum((torch.mean(output_real, dim=0) - torch.mean(output_syn, dim=0))**2)
-
                                 logits_syn = net(img_syn)
                                 metrics[image_sign] += F.cross_entropy(logits_syn, lab_syn.repeat(args.aug_num)).detach().item()
                                 acc_avg[image_sign].add(logits_syn.detach(), lab_syn.repeat(args.aug_num))

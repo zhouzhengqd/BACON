@@ -33,8 +33,8 @@ def main():
     parser.add_argument('--batch_train', type=int, default=256, help='batch size for training networks')
     parser.add_argument('--init', type=str, default='real', help='noise/real: initialize synthetic images from random noise or randomly sampled real images.')
     parser.add_argument('--dsa_strategy', type=str, default='color_crop_cutout_flip_scale_rotate', help='differentiable Siamese augmentation strategy')
-    parser.add_argument('--data_path', type=str, default='/home/data', help='dataset path')
-    parser.add_argument('--save_path', type=str, default='/home/BACON/result', help='path to save results')
+    parser.add_argument('--data_path', type=str, default='./data', help='dataset path')
+    parser.add_argument('--save_path', type=str, default='./result', help='path to save results')
     parser.add_argument('--dis_metric', type=str, default='ours', help='distance metric')
     parser.add_argument('--outer_loop', type=int, default=1, help='outer loop for network update')
     parser.add_argument('--inner_loop', type=int, default=1, help='outer loop for network update')
@@ -199,7 +199,7 @@ def main():
                         accs_all_exps[model_eval] += accs
 
                     # save the checkpoint of synthetic set with best performance
-                    best_synset_filename = '/home/BACON/checkpoints/{}_ipc_{}_aug_{}_model_{}_acc_{}.pkl'.format(args.dataset, args.ipc, args.aug, model_eval, np.mean(accs))
+                    best_synset_filename = './checkpoints/{}_ipc_{}_aug_{}_model_{}_acc_{}.pkl'.format(args.dataset, args.ipc, args.aug, model_eval, np.mean(accs))
                     if best_acc < np.mean(accs):
                         best_acc = np.mean(accs)
                         with open(best_synset_filename, 'wb') as pkl_file:

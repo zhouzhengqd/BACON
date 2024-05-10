@@ -11,7 +11,7 @@ from dc_utils import parser_bool, downscale, epoch_no_loader, get_loops, get_dat
 import torchnet
 import torch.nn.functional as F
 import pickle
-from utils import total_variation, clip_function, negative_log_likelihood, visualize_tsne, negative_log_likelihood_Improved
+from utils import total_variation, clip_function, negative_log_likelihood, visualize_tsne
 best_acc = 0
 
 def main():
@@ -33,8 +33,8 @@ def main():
     parser.add_argument('--batch_train', type=int, default=256, help='batch size for training networks')
     parser.add_argument('--init', type=str, default='real', help='noise/real: initialize synthetic images from random noise or randomly sampled real images.')
     parser.add_argument('--dsa_strategy', type=str, default='color_crop_cutout_flip_scale_rotate', help='differentiable Siamese augmentation strategy')
-    parser.add_argument('--data_path', type=str, default='/home/data', help='dataset path')
-    parser.add_argument('--save_path', type=str, default='/home/BACON/result', help='path to save results')
+    parser.add_argument('--data_path', type=str, default='./data/', help='dataset path')
+    parser.add_argument('--save_path', type=str, default='./result/', help='path to save results')
     parser.add_argument('--dis_metric', type=str, default='ours', help='distance metric')
     parser.add_argument('--outer_loop', type=int, default=1, help='outer loop for network update')
     parser.add_argument('--inner_loop', type=int, default=1, help='outer loop for network update')
@@ -133,7 +133,7 @@ def main():
         if args.init == 'real':
             print('initialize synthetic data from random real images')
             for c in range(num_classes):
-                if args.aug:
+                if not args.aug:
                     image_syn.data[c*args.ipc:(c+1)*args.ipc] = get_images(c, args.ipc).detach().data
                 else:
                     half_size = im_size[0]//2
@@ -199,7 +199,7 @@ def main():
                         accs_all_exps[model_eval] += accs
 
                     # save the checkpoint of synthetic set with best performance
-                    best_synset_filename = '/home/BACON/checkpoints/{}_ipc_{}_aug_{}_model_{}_acc_{}.pkl'.format(args.dataset, args.ipc, args.aug, model_eval, np.mean(accs))
+                    best_synset_filename = './checkpoints/{}_ipc_{}_aug_{}_model_{}_acc_{}.pkl'.format(args.dataset, args.ipc, args.aug, model_eval, np.mean(accs))
                     if best_acc < np.mean(accs):
                         best_acc = np.mean(accs)
                         with open(best_synset_filename, 'wb') as pkl_file:
@@ -304,13 +304,13 @@ def main():
                                 loss_c += 0.8*tv
                                 loss_c += 0.2*clip_r
                                 logits_syn = net(img_syn)
-                                metrics[image_sign] += F.cross_entropy(logits_syn, lab_syn).detach().item()
-                                acc_avg[image_sign].add(logits_syn.detach(), lab_syn)
+                                metrics[image_sign] += F.cross_entropy(logits_syn, lab_syn.repeat(args.aug_num)).detach().item()
+                                acc_avg[image_sign].add(logits_syn.detach(), lab_syn.repeat(args.aug_num))
 
                                 syn_ce_loss = 0
                                 if args.syn_ce:
                                     weight_i = net_acc.value()[0] if net_acc.n != 0 else 0
-                                    syn_ce_loss += (F.cross_entropy(logits_syn, lab_syn) * weight_i)
+                                    syn_ce_loss += (F.cross_entropy(logits_syn, lab_syn.repeat(args.aug_num)) * weight_i)
 
                                     loss_c += (syn_ce_loss * args.ce_weight)
 
