@@ -46,8 +46,10 @@ The distilled datasets are available on the [Data Drive](https://drive.google.co
 ### Step 3
 - Run the following command to create a conda environment
     ```
-    cd bacon
+    cd BACON
+    cd Code
     conda env create -f environment.yml
+    conda activate bacon
     ```
 ## Command for Reproducing Experiment Results and Evaluation
 - For example: Validate on the MNIST, other datasets follow the "Command.txt" file.
