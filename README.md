@@ -20,7 +20,7 @@ The distilled datasets are available on the [Data Drive](https://drive.google.co
 
 | Method | MNIST | Fashion-MNIST | SVHN | CIFAR-10 | CIFAR-100 | Tiny-ImageNet |
 | :------: | :-----:  | :----: | :-----: | :----: |:----: |:----: | 
-| **DM** | 94.3 | - | - | 48.9 | 29.7 | 12.9 |
+| **DM** | 97.3 | - | - | 48.9 | 29.7 | 12.9 |
 | **IDM** | 96.26 | 82.53 | 82.95 | 58.6 | 45.1 | 21.9 |
 | **BACON** | 97.3 | 84.23 | 84.64 | 62.06 | 46.15 | 25 | 
 - **IPC-1**
@@ -29,7 +29,7 @@ The distilled datasets are available on the [Data Drive](https://drive.google.co
 | :------: | :-----:  | :----: | :-----: | :----: |:----: |:----: | 
 | **DM** | 89.2 | - | - | 26 | 11.4 | 3.9 |
 | **IDM** | 93.82 | 78.23 | 69.45 | 45.60 | 20.1 | 10.1 |
-| **BACON** | 94.15 | 78.48 | 69.04 | 45.62 | 23.68 | 10.2 | 
+| **BACON** | 94.15 | 78.48 | 69.44 | 45.62 | 23.68 | 10.2 | 
 ### Visulizations
 ![image samples](./Fig/Fig7.png)
 ![image samples](./Fig/Fig8.png)
