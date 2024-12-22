@@ -2,7 +2,7 @@
 <img src="Fig/logo.png" width="100%" class="center" alt="pipeline"/>
 </p>
 
-### [Paper](https://arxiv.org/pdf/2406.01112) | [Distilled Datasets](https://share.multcloud.link/share/f496af96-494a-4815-a7c9-e93cd95ecdd1)
+### [Paper](https://arxiv.org/pdf/2406.01112) | [Distilled Dataset](https://share.multcloud.link/share/f496af96-494a-4815-a7c9-e93cd95ecdd1)
 This repository contains the code and implementation for the paper "**BACON: Bayesian Optimal Condensation Framework for Dataset Distillation**".
 ## 👨‍💻 Authors
 
