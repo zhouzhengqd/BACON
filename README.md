@@ -2,14 +2,14 @@
 <img src="Fig/logo.png" width="100%" class="center" alt="pipeline"/>
 </p>
 
-### [Project Page](https://zhouzhengqd.github.io/bacon.page/) | [Paper](https://arxiv.org/pdf/2406.01112) | [Distilled Dataset](https://share.multcloud.link/share/f496af96-494a-4815-a7c9-e93cd95ecdd1)
+### [Project Page](https://github.com/) | [Paper](https://arxiv.org/) | [Distilled Dataset](https://share.multcloud.link/share/f496af96-494a-4815-a7c9-e93cd95ecdd1)
 This repository contains the code and implementation for the paper "**BACON: Bayesian Optimal Condensation Framework for Dataset Distillation**".
-## 👨‍💻 Authors
+<!-- ## 👨‍💻 Authors
 
 - [Zheng Zhou](https://zhouzhengqd.github.io/)<sup>1</sup>, [Hongbo Zhao](https://shi.buaa.edu.cn/09698/zh_CN/index.htm)<sup>1</sup>, [Guangliang Cheng](https://sites.google.com/view/guangliangcheng)<sup>2</sup>, [Xiangtai Li](https://lxtgh.github.io/)<sup>3</sup>, [Shuchang Lyu*](https://scholar.google.com/citations?user=SwGcxzMAAAAJ&hl=en)<sup>1</sup>, [Wenquan Feng](https://shi.buaa.edu.cn/fengwenquan/zh_CN/index/132879/list/)<sup>1</sup>, and [Qi Zhao](https://shi.buaa.edu.cn/07297/zh_CN/index.htm)<sup>1</sup> (* Corresponding Author)
 - <sup>1</sup>[Beihang Univerisity](https://www.buaa.edu.cn/), <sup>2</sup>[University of Liverpool](https://www.liverpool.ac.uk/), and <sup>3</sup>[Nanyang Technological University](https://www.ntu.edu.sg/)
   
-📧 For inquiries, please reach out via email: zhengzhou@buaa.edu.cn. Feel free to ask any questions!
+📧 For inquiries, please reach out via email: zhengzhou@buaa.edu.cn. Feel free to ask any questions! -->
 ## 🔍 Overview
 <p align="center">
 <img src="./Fig/overview.png" width=100% height=55.2%
@@ -17,7 +17,7 @@ class="center">
   <figcaption><strong>Figure 1:</strong> Comparison of BACON and existing DD methods: (a) Traditional methods align gradients and distributions on original and synthetic datasets. (b) BACON transforms DD into a Bayesian optimization task, generating synthetic images using likelihood and prior probabilities.</figcaption>
 </p>
  
-> **Abstract** Dataset Distillation (DD) reduces dataset size while maintaining test set performance, helping to cut storage and training costs. Current DD methods struggle with large datasets and lack a solid theoretical foundation. To address this, we introduce the <u>**BA**</u>yesian Optimal <u>**CON**</u>densation Framework (<u>**BACON**</u>), the first Bayesian approach to DD. BACON formulates DD as a minimization problem in Bayesian joint distributions and derives a numerically feasible lower bound. Our experiments show that BACON outperforms state-of-the-art methods, with significant accuracy improvements on CIFAR-10 and TinyImageNet. BACON seamlessly integrates with existing systems and boosts DD performance. Code and distilled datasets are available at [BACON](https://github.com/zhouzhengqd/BACON).
+> **Abstract** Dataset Distillation (DD) reduces dataset size while maintaining test set performance, helping to cut storage and training costs. Current DD methods struggle with large datasets and lack a solid theoretical foundation. To address this, we introduce the <u>**BA**</u>yesian Optimal <u>**CON**</u>densation Framework (<u>**BACON**</u>), the first Bayesian approach to DD. BACON formulates DD as a minimization problem in Bayesian joint distributions and derives a numerically feasible lower bound. Our experiments show that BACON outperforms state-of-the-art methods, with significant accuracy improvements on CIFAR-10 and TinyImageNet. BACON seamlessly integrates with existing systems and boosts DD performance. Code and distilled datasets are available at [BACON](https://github.com/).
 
 ## 🚀 Contributions
 <p align="center">
@@ -111,7 +111,7 @@ The distilled datasets are available at [Distilled Dataset](https://share.multcl
   ```
 ## 🙏 Acknowledge
 We gratefully acknowledge the contributors of DC-bench and IDM, as our code builds upon their work ([DC-bench](https://github.com/justincui03/dc_benchmark?tab=readme-ov-file) and [IDM](https://github.com/uitrbn/IDM)).
-## 📚 Citation
+<!-- ## 📚 Citation
 ```
 @article{zhou2024bacon,
   title={BACON: Bayesian Optimal Condensation Framework for Dataset Distillation},
@@ -119,7 +119,7 @@ We gratefully acknowledge the contributors of DC-bench and IDM, as our code buil
   journal={arXiv preprint arXiv:2406.01112},
   year={2024}
 }
-```
-## 🌟 Star History
+``` -->
+<!-- ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=zhouzhengqd/BACON&type=Date)](https://star-history.com/#zhouzhengqd/BACON&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=zhouzhengqd/BACON&type=Date)](https://star-history.com/#zhouzhengqd/BACON&Date) -->
