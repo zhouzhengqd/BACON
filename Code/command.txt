@@ -29,7 +29,8 @@ python3 -u BACON_cifar100.py --dataset CIFAR100 --model ConvNet --ipc 10 --dsa_s
 CIFAR100/50:
 python3 -u BACON_cifar100.py --dataset CIFAR100 --model ConvNet --ipc 50 --dsa_strategy color_crop_cutout_flip_scale_rotate --init real --lr_img 0.2 --num_exp 5 --num_eval 5 --net_train_real --eval_interval 500 --outer_loop 1 --mismatch_lambda 0 --net_decay --embed_last 1000 --syn_ce --ce_weight 0.1 --train_net_num 1 --aug --model_train_steps 50
 
-TinyImageNet:
+TinyImageNet/1:
 python3 -u BACON_tiny.py --dataset TinyImageNet --model ConvNet --ipc 1 --dsa_strategy color_crop_cutout_flip_scale_rotate --init real --lr_img 0.2 --num_exp 5 --num_eval 5 --net_train_real --eval_interval 100  --outer_loop 1 --mismatch_lambda 0 --net_decay --embed_last 1000 --syn_ce --ce_weight 0.5 --train_net_num 1 --aug
 
+TinyImageNet/10:
 python3 -u BACON_tiny.py --dataset TinyImageNet --model ConvNet --ipc 10 --dsa_strategy color_crop_cutout_flip_scale_rotate --init real --lr_img 0.2 --num_exp 5 --num_eval 5 --net_train_real --eval_interval 500 --outer_loop 1 --mismatch_lambda 0 --net_decay --embed_last 1000 --syn_ce --ce_weight 0.5 --train_net_num 1 --aug --model_train_steps 50
