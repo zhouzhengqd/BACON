@@ -52,14 +52,14 @@ All distilled datasets are publicly accessible at [Distilled Dataset](https://sh
 
 | Method | SVHN | CIFAR-10 | CIFAR-100 | TinyImageNet |
 | :------: | :-----: | :----: |:----: |:----: | 
-| **DM** | 48.9 | 29.7 | 12.9 |
+| **DM** | 72.8 | 48.9 | 29.7 | 12.9 |
 | **IDM** | 81.0 | 58.6 | 45.1 | 21.9 |
 | **BACON** | 84.64 | 62.06 | 46.15 | 25.0 | 
 - **IPC-1**
 
 | Method | SVHN | CIFAR-10 | CIFAR-100 | TinyImageNet |
 | :------: | :-----: | :----: |:----: |:----: | 
-| **DM** | 26.0 | 11.4 | 3.9 |
+| **DM** | 21.6 | 26.0 | 11.4 | 3.9 |
 | **IDM** | 65.3 | 45.2 | 20.1 | 10.1 |
 | **BACON** | 69.44 | 45.62 | 23.68 | 10.2 | 
 ### Visulizations
